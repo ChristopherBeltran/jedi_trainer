@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_191312) do
+ActiveRecord::Schema.define(version: 2019_02_16_191724) do
 
   create_table "force_powers", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "jedi_force_powers", force: :cascade do |t|
+    t.integer "jedi_id"
+    t.integer "force_power_id"
+    t.integer "skill_level"
   end
 
   create_table "jedis", force: :cascade do |t|
