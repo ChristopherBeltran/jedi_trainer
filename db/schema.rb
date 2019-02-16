@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_191724) do
+ActiveRecord::Schema.define(version: 2019_02_16_191929) do
 
   create_table "force_powers", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 2019_02_16_191724) do
     t.integer "ovr_force_strength"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "padawan_force_powers", force: :cascade do |t|
+    t.integer "padawan_id"
+    t.integer "force_power_id"
+    t.integer "skill_level"
   end
 
   create_table "padawans", force: :cascade do |t|
