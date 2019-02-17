@@ -1,0 +1,2 @@
+class PadawansController < ApplicationController
+end 
