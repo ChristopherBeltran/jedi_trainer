@@ -10,33 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_221053) do
+ActiveRecord::Schema.define(version: 2019_02_18_223911) do
 
   create_table "force_powers", force: :cascade do |t|
     t.string "name"
-  end
-
-  create_table "jedi_force_powers", force: :cascade do |t|
-    t.integer "jedi_id"
-    t.integer "force_power_id"
-    t.integer "skill_level"
-  end
-
-  create_table "jedis", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.boolean "master"
-    t.integer "trained_padawans"
-    t.string "lightsaber_color"
-    t.integer "age"
-    t.string "homeplanet"
-    t.string "species"
-    t.integer "ovr_force_strength"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "google_token"
-    t.string "google_refresh_token"
   end
 
   create_table "padawan_force_powers", force: :cascade do |t|
@@ -54,8 +31,31 @@ ActiveRecord::Schema.define(version: 2019_02_18_221053) do
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.integer "jedi_id"
+    t.integer "user_id"
     t.integer "padawan_id"
+  end
+
+  create_table "user_force_powers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "force_power_id"
+    t.integer "skill_level"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "master"
+    t.integer "trained_padawans"
+    t.string "lightsaber_color"
+    t.integer "age"
+    t.string "homeplanet"
+    t.string "species"
+    t.integer "ovr_force_strength"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
 end

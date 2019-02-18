@@ -1,4 +1,4 @@
 class Training < ActiveRecord::Base
-  belongs_to :jedi
+  belongs_to :user
   belongs_to :padawan
-end 
+end
