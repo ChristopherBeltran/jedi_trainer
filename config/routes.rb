@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get 'auth/:provider/callback', to: 'sessions#googleAuth'
-  get 'auth/failure', to: redirect('/')
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

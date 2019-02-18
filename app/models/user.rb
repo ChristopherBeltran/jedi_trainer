@@ -1,9 +1,20 @@
 class User < ActiveRecord::Base
+  devise :omniauthable, :omniauth_providers => [:google_oauth2]
   has_many :trainings
   has_many :padawans, through: :trainings
   has_many :user_force_powers
   has_many :force_powers, through: :user_force_powers
   has_secure_password
+
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.token = auth.credentials.token
+      user.expires = auth.credentials.expires
+      user.expires_at = auth.credentials.expires_at
+      user.refresh_token = auth.credentials.refresh_token
+    end
+  end
 
   #def display_skill_levels
   #  skills = []
