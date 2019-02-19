@@ -1,5 +1,12 @@
 class SessionsController < ApplicationController
 
+  def new
+  end 
+
+  def create
+  end
+
+
   def googleAuth
     access_token = request.env["omniauth.auth"]
     user = Jedi.from_omniauth(access_token)
@@ -13,5 +20,9 @@ class SessionsController < ApplicationController
     user.save
     redirect_to root_path
   end
+
+  def destroy
+  end
+
 
 end
