@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_230844) do
+ActiveRecord::Schema.define(version: 2019_02_19_024515) do
 
   create_table "force_powers", force: :cascade do |t|
     t.string "name"
@@ -54,12 +54,8 @@ ActiveRecord::Schema.define(version: 2019_02_18_230844) do
     t.integer "ovr_force_strength"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "provider"
     t.string "uid"
-    t.string "token"
-    t.integer "expires_at"
-    t.boolean "expires"
-    t.string "refresh_token"
+    t.string "provider"
   end
 
 end
