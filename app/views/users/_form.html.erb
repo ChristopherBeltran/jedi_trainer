@@ -1,0 +1,26 @@
+<%= form_for @user do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :password %>
+<%= f.password_field :password %><br>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %><br>
+<%= f.label :email %>
+<%= f.text_field :email %> <br>
+<%= f.label :age %>
+<%= f.number_field :age %> <br>
+<%= f.label :homeplanet %>
+<%= f.text_field :homeplanet %> <br>
+<%= f.label :species %>
+<%= f.text_field :species %> <br>
+<%= f.label :lightsaber_color %>
+<%= f.text_field :lightsaber_color %> <br>
+<%= f.label :trained_padawans %>
+<%= f.number_field :trained_padawans %> <br>
+<%= f.label :ovr_force_strength %> <p>(Max of 99)
+<%= f.number_field :ovr_force_strength, in: 1..99 %> <br>
+<%= f.label :master? %>
+<%= f.check_box :master %>
+<br>
+<%= f.submit  "Create Jedi" %>
+<% end %>
